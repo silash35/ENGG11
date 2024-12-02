@@ -20,7 +20,7 @@ def plot_tanks(t, tanks, labels=None, filename: str | None = None, scatter=0):
     for i, tank in enumerate(tanks):
         label = labels[i] if (type(labels) is list) else labels
         if i < scatter:
-            plt.scatter(t, tank, label=label, s=8)
+            plt.scatter(t, tank, label=label, s=8, alpha=0.5)
         else:
             plt.plot(t, tank, label=label)
     plt.xlabel("Tempo / s")
