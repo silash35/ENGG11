@@ -28,3 +28,11 @@ def plot_tanks(t, tanks, labels=None, filename: str | None = None, scatter=0):
     plt.legend()
 
     save_or_show(filename)
+
+
+def plot_loss(loss_values, epoch_count, filename: str | None = None):
+    plt.figure(figsize=(10, 4), layout="constrained", dpi=default_dpi)
+    plt.plot(epoch_count, loss_values)
+    plt.xlabel("Epoch")
+    plt.ylabel("Loss")
+    save_or_show(filename)
