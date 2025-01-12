@@ -1,3 +1,15 @@
 {
-  "cSpell.words": ["figsize", "interp", "pinn", "xlabel"]
+  "cSpell.words": [
+    "figsize",
+    "hiperparametros",
+    "interp",
+    "pinn",
+    "pygad",
+    "torchga",
+    "xlabel"
+  ],
+  "material-icon-theme.folders.associations": {
+    "studies": "target",
+    "results": "benchmark"
+  }
 }
