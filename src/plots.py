@@ -1,8 +1,12 @@
 import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+from matplotlib import colors as mcolors
 
 default_dpi = 96
-save_folder = "../media/"
+save_folder = "../figures/"
 plt.rcParams.update({"font.size": 15})
+colors = list(mcolors.TABLEAU_COLORS.keys())
 
 
 def save_or_show(filename: str | None = None):
@@ -35,4 +39,33 @@ def plot_loss(loss_values, epoch_count, filename: str | None = None):
     plt.plot(epoch_count, loss_values)
     plt.xlabel("Epoch")
     plt.ylabel("Loss")
+    save_or_show(filename)
+
+
+def plot_density(values, labels, filename: str | None = None, width=20, extra=None):
+    plt.rcParams.update({"font.size": 14})
+    fig, axs = plt.subplots(figsize=(width, 8), layout="constrained", dpi=300)
+    t_max = max([max(v) for v in values])
+    for i in range(len(values)):
+        mean_value = np.mean(values[i])
+        sns.histplot(
+            values[i],
+            kde=True,
+            stat="density",
+            bins=15,
+            color=colors[i],
+        )
+        fig.axvline(
+            mean_value,
+            linestyle="--",
+            linewidth=1.5,
+            color=colors[i],
+            label=f"{labels[i]}: {mean_value:.3f}s",
+        )
+        fig.legend()
+        fig.set_ylabel(None)
+        fig.set_xlim(0, t_max)
+
+    fig.xlabel("Tempo / s")
+    fig.ylabel("Densidade de Probabilidade")
     save_or_show(filename)
