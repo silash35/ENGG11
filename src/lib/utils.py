@@ -13,10 +13,6 @@ def mean_square(x):
     return torch.mean(x**2)
 
 
-def mean_abs(x):
-    return torch.mean(torch.abs(x))
-
-
 def timer(func, *args):
     start_time = time.monotonic()
     result = func(*args)
