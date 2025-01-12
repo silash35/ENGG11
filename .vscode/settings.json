@@ -1,8 +1,11 @@
 {
   "cSpell.words": [
+    "axvline",
     "figsize",
     "hiperparametros",
+    "histplot",
     "interp",
+    "mcolors",
     "pinn",
     "pygad",
     "torchga",

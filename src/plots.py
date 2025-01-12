@@ -42,10 +42,10 @@ def plot_loss(loss_values, epoch_count, filename: str | None = None):
     save_or_show(filename)
 
 
-def plot_density(values, labels, filename: str | None = None, width=20, extra=None):
+def plot_density(values, labels, filename: str | None = None):
     plt.rcParams.update({"font.size": 14})
-    fig, axs = plt.subplots(figsize=(width, 8), layout="constrained", dpi=300)
-    t_max = max([max(v) for v in values])
+    fig, ax = plt.subplots(figsize=(10, 4), layout="constrained", dpi=300)
+
     for i in range(len(values)):
         mean_value = np.mean(values[i])
         sns.histplot(
@@ -55,17 +55,15 @@ def plot_density(values, labels, filename: str | None = None, width=20, extra=No
             bins=15,
             color=colors[i],
         )
-        fig.axvline(
+        ax.axvline(
             mean_value,
             linestyle="--",
             linewidth=1.5,
             color=colors[i],
             label=f"{labels[i]}: {mean_value:.3f}s",
         )
-        fig.legend()
-        fig.set_ylabel(None)
-        fig.set_xlim(0, t_max)
+        plt.legend()
 
-    fig.xlabel("Tempo / s")
-    fig.ylabel("Densidade de Probabilidade")
+    plt.xlabel("Tempo / s")
+    plt.ylabel("Densidade de Probabilidade")
     save_or_show(filename)
