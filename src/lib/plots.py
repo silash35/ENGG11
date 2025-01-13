@@ -52,7 +52,7 @@ def plot_density(values, labels, filename: str | None = None):
             values[i],
             kde=True,
             stat="density",
-            bins=15,
+            # bins=15,
             color=colors[i],
         )
         ax.axvline(
