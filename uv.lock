@@ -160,6 +160,18 @@ wheels = [
 ]
 
 [[package]]
+name = "drawarrow"
+version = "0.0.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "matplotlib" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/4f/ba/4eb1b06d3ce91f45d4f61b0a3c74349e9488bf2712b013802de35a57d1c3/drawarrow-0.0.3.tar.gz", hash = "sha256:a2cc93e91bc4562a80507bf46000108d37d365ce0a14aa86432833f0ec809319", size = 7870 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8d/e1/8e0b1438e4eac52b78581aebdb778a8583cbe4259cab9a7ca2d5558b5fa8/drawarrow-0.0.3-py3-none-any.whl", hash = "sha256:63a1127480167f65a726559d54012dab980836dd3da9cc9ff382f4ace0b41e93", size = 9971 },
+]
+
+[[package]]
 name = "executing"
 version = "2.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -518,6 +530,7 @@ name = "neural-networks"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "drawarrow" },
     { name = "hickle" },
     { name = "ipykernel" },
     { name = "ipywidgets" },
@@ -536,6 +549,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "drawarrow", specifier = ">=0.0.3" },
     { name = "hickle", specifier = ">=5.0.3" },
     { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "ipywidgets", specifier = ">=8.1.5" },

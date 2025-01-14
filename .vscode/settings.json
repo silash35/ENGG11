@@ -1,6 +1,8 @@
 {
   "cSpell.words": [
     "axvline",
+    "darkred",
+    "drawarrow",
     "figsize",
     "hiperparametros",
     "histplot",
@@ -8,8 +10,13 @@
     "mcolors",
     "pinn",
     "pygad",
+    "setp",
+    "supxlabel",
+    "supylabel",
     "torchga",
-    "xlabel"
+    "xlabel",
+    "xticks",
+    "yticks"
   ],
   "material-icon-theme.folders.associations": {
     "studies": "target",
